@@ -5,6 +5,7 @@ namespace App\Packages\Resolver\R1;
 use App\Packages\Resolver\R1\Formatter\FixLabelFormatter;
 use App\Packages\Resolver\R1\Formatter\TodoLabelFormatter;
 use App\Packages\Resolver\R1\LabelFormatterResolver;
+use App\Packages\Resolver\R2\Formatter\IdeaLabelFormatter;
 
 
 final readonly class OutputTaskCommand
@@ -13,7 +14,8 @@ final readonly class OutputTaskCommand
     {
         $resolver
             ->add(new TodoLabelFormatter)
-            ->add(new FixLabelFormatter);
+            ->add(new FixLabelFormatter)
+            ->add(new IdeaLabelFormatter);
     }
 
     public function execute($task, LabelType $label): string
